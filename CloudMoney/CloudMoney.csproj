@@ -71,10 +71,141 @@
     <Content Include="App_Data\CloudMoneyDB_log.ldf">
       <DependentUpon>CloudMoneyDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Auth\Auth.aspx" />
+    <Content Include="Auth\ChangePassword.aspx" />
+    <Content Include="Auth\Login.aspx" />
+    <Content Include="Auth\Logout.aspx" />
+    <Content Include="Auth\Register.aspx" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Reports\MyDepositsWithdrawals.aspx" />
+    <Content Include="Reports\SentReceivedHistory.aspx" />
+    <Content Include="Reports\StatementOfAccount.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="Transactions\Deposit.aspx" />
+    <Content Include="Transactions\SendMoney.aspx" />
+    <Content Include="Transactions\Withdraw.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\Auth.aspx.cs">
+      <DependentUpon>Auth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Auth.aspx.designer.cs">
+      <DependentUpon>Auth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.designer.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\AuthManager.cs" />
+    <Compile Include="Logic\BalanceSnapshot.cs" />
+    <Compile Include="Logic\DatabaseHelper.cs" />
+    <Compile Include="Logic\LoginResult.cs" />
+    <Compile Include="Logic\OperationResult.cs" />
+    <Compile Include="Logic\RecipientLookupResult.cs" />
+    <Compile Include="Logic\RegisterResult.cs" />
+    <Compile Include="Logic\ReportManager.cs" />
+    <Compile Include="Logic\SessionHelper.cs" />
+    <Compile Include="Logic\TransactionManager.cs" />
+    <Compile Include="Logic\ValidationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\MyDepositsWithdrawals.aspx.cs">
+      <DependentUpon>MyDepositsWithdrawals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MyDepositsWithdrawals.aspx.designer.cs">
+      <DependentUpon>MyDepositsWithdrawals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SentReceivedHistory.aspx.cs">
+      <DependentUpon>SentReceivedHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SentReceivedHistory.aspx.designer.cs">
+      <DependentUpon>SentReceivedHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StatementOfAccount.aspx.cs">
+      <DependentUpon>StatementOfAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StatementOfAccount.aspx.designer.cs">
+      <DependentUpon>StatementOfAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Deposit.aspx.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\Deposit.aspx.designer.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\SendMoney.aspx.cs">
+      <DependentUpon>SendMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\SendMoney.aspx.designer.cs">
+      <DependentUpon>SendMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Withdraw.aspx.cs">
+      <DependentUpon>Withdraw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\Withdraw.aspx.designer.cs">
+      <DependentUpon>Withdraw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -86,12 +217,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Auth\" />
     <Folder Include="Content\" />
-    <Folder Include="Logic\" />
-    <Folder Include="Reports\" />
     <Folder Include="Scripts\" />
-    <Folder Include="Transactions\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

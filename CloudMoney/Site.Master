@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="CloudMoney.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= Page.Title %></title>
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("~/Content/Style.css") %>" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <div class="header-inner">
+                <div class="logo">Cloud<span>Money</span></div>
+                <div class="nav">
+                    <asp:PlaceHolder ID="phLoggedOut" runat="server">
+                        <a href="<%= ResolveUrl("~/Auth/Login.aspx") %>">Login</a>
+                        <a href="<%= ResolveUrl("~/Auth/Register.aspx") %>">Register</a>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder ID="phLoggedIn" runat="server" Visible="false">
+                        <a href="<%= ResolveUrl("~/Dashboard.aspx") %>">Dashboard</a>
+                        <a href="<%= ResolveUrl("~/Transactions/Deposit.aspx") %>">Deposit</a>
+                        <a href="<%= ResolveUrl("~/Transactions/Withdraw.aspx") %>">Withdraw</a>
+                        <a href="<%= ResolveUrl("~/Transactions/SendMoney.aspx") %>">Send Money</a>
+                        <div class="dropdown">
+                            <a href="#">Reports &#x25BE;</a>
+                            <div class="dropdown-menu">
+                                <a href="<%= ResolveUrl("~/Reports/StatementOfAccount.aspx") %>">Statement of Account</a>
+                                <a href="<%= ResolveUrl("~/Reports/MyDepositsWithdrawals.aspx") %>">My Deposits / Withdrawals</a>
+                                <a href="<%= ResolveUrl("~/Reports/SentReceivedHistory.aspx") %>">My Sent / Received</a>
+                            </div>
+                        </div>
+                        <a href="<%= ResolveUrl("~/Auth/ChangePassword.aspx") %>">Change Password</a>
+                        <a href="<%= ResolveUrl("~/Auth/Logout.aspx") %>">Logout</a>
+                    </asp:PlaceHolder>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <asp:Panel ID="pnlMessage" runat="server" Visible="false">
+                <asp:Label ID="lblMessage" runat="server" />
+            </asp:Panel>
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+        <div class="footer">
+            &copy; <%= DateTime.Now.Year %> CloudMoney. All rights reserved.
+        </div>
+    </form>
+</body>
+</html>
